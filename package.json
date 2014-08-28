@@ -24,6 +24,7 @@
     "gulp-markdown": "^1.0.0",
     "gulp-marked": "^0.2.0",
     "gulp-watch": "^0.6.9",
-    "marked": "^0.3.2"
+    "marked": "^0.3.2",
+    "open": "0.0.5"
   }
 }

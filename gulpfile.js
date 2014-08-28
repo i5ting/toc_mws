@@ -11,8 +11,13 @@ var livereload = require('gulp-livereload'),
 		 
 gulp.task('server', function(next) {
   var connect = require('connect'),
-      server = connect();
-  server.use(connect.static(dest)).listen(process.env.PORT || 8900, next);
+      server = connect(),
+			port = process.env.PORT || 8900;
+
+  server.use(connect.static(dest)).listen(port, next);
+	
+	var open = require("open");
+	open("http://127.0.0.1:" + port + "/");
 });
 
 gulp.task('watch', function() {
