@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var watch = require('gulp-watch');
 var markdown = require('gulp-markdown-livereload');
-var connect = require('gulp-connect');
 var livereload = require('gulp-livereload');
 var dest = 'public';
 
