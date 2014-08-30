@@ -27,38 +27,13 @@ var tinylr = require('tiny-lr');
 gulp.task('default',['server'], function() { 
 	livereload.listen();
 	
-  // var server = tinylr();
-  // server.listen(35729, function(err) {
-  //   if(err) {
-  //     return console.log('Unable to start live reload server:', err);
-  //   } else {
-  //     console.log('Running live reload server:' + 35729 );
-  //     if(true) {
-  // 		 	// open("http://localhost:8900/public");
-  //     }
-  //   }
-  // });
-  //
-	
-	
   watch({ glob: './src/*.md' })
 	.pipe(markdown())
 	.pipe(gulp.dest('./public/'));
-	 	//
+
 	gulp.src('public/*.html')
-	    .pipe(watch())
-	    .pipe(livereload({ auto: true }));
-			
-			gulp.watch(dest + '/**').on('change', function(file) {
-			      livereload().changed(file.path);
-			  });
-	//
-	// 		gulp.src('./public/*.html')
-	// 		    .pipe(connect.reload({
-	// 					 root: 'public',
-	// 			    livereload: true
-	// }));
- 
+  .pipe(watch())
+  .pipe(livereload({ auto: true }));	
 }); 
 
 gulp.task('src', function(done) {
